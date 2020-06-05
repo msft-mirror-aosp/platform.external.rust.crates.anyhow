@@ -1,0 +1,19 @@
+name: anyhow
+description: "Flexible concrete Error type built on std::error::Error"
+third_party {
+  url {
+    type: HOMEPAGE
+    value: "https://crates.io/crates/anyhow"
+  }
+  url {
+    type: GIT
+    value: "https://github.com/dtolnay/anyhow"
+  }
+  version: "1.0.28"
+  license_type: NOTICE
+  last_upgrade_date {
+    year: 2020
+    month: 5
+    day: 6
+  }
+}
