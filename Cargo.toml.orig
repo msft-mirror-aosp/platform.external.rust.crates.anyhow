@@ -1,6 +1,6 @@
 [package]
 name = "anyhow"
-version = "1.0.28" # remember to update html_root_url
+version = "1.0.32" # remember to update html_root_url
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -9,9 +9,6 @@ repository = "https://github.com/dtolnay/anyhow"
 documentation = "https://docs.rs/anyhow"
 readme = "README.md"
 categories = ["rust-patterns"]
-
-[badges]
-travis-ci = { repository = "dtolnay/anyhow" }
 
 [features]
 default = ["std"]
