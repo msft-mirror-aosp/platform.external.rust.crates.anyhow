@@ -7,13 +7,13 @@ third_party {
   }
   url {
     type: ARCHIVE
-    value: "https://static.crates.io/crates/anyhow/anyhow-1.0.32.crate"
+    value: "https://static.crates.io/crates/anyhow/anyhow-1.0.33.crate"
   }
-  version: "1.0.32"
+  version: "1.0.33"
   license_type: NOTICE
   last_upgrade_date {
     year: 2020
-    month: 8
-    day: 27
+    month: 10
+    day: 26
   }
 }
