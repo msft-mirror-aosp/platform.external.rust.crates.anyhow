@@ -231,6 +231,10 @@ rust_library {
     flags: [
         "--cfg backtrace",
     ],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
 }
 
 // dependent_library ["feature_list"]
