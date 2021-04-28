@@ -26,18 +26,3 @@ index 1099708..a2e3476 100644
  }
  
  rust_test_host {
-diff --git a/Android.bp b/Android.bp
-index ca491cf..2b17953 100644
---- a/Android.bp
-+++ b/Android.bp
-@@ -271,6 +271,10 @@ rust_library {
-         "--cfg anyhow_no_ptr_addr_of",
-         "--cfg backtrace",
-     ],
-+    apex_available: [
-+        "//apex_available:platform",
-+        "com.android.virt",
-+    ],
- }
- 
- // dependent_library ["feature_list"]
