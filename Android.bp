@@ -264,6 +264,7 @@ rust_library {
     cfgs: ["backtrace"],
     apex_available: [
         "//apex_available:platform",
+        "com.android.compos",
         "com.android.resolv",
         "com.android.virt",
     ],
@@ -271,14 +272,15 @@ rust_library {
 }
 
 // dependent_library ["feature_list"]
+//   autocfg-1.0.1
 //   dissimilar-1.0.2
-//   futures-0.3.14
-//   futures-channel-0.3.14 "futures-sink,sink"
-//   futures-core-0.3.14
-//   futures-io-0.3.14
-//   futures-sink-0.3.14
-//   futures-task-0.3.14
-//   futures-util-0.3.14 "futures-sink,sink"
+//   futures-0.3.15
+//   futures-channel-0.3.15 "futures-sink,sink"
+//   futures-core-0.3.15
+//   futures-io-0.3.15
+//   futures-sink-0.3.15
+//   futures-task-0.3.15
+//   futures-util-0.3.15 "futures-sink,sink"
 //   glob-0.3.0
 //   itoa-0.4.7
 //   lazy_static-1.4.0
@@ -288,13 +290,13 @@ rust_library {
 //   quote-1.0.9 "default,proc-macro"
 //   rustversion-1.0.4
 //   ryu-1.0.5
-//   serde-1.0.125 "default,derive,serde_derive,std"
-//   serde_derive-1.0.125 "default"
+//   serde-1.0.126 "default,derive,serde_derive,std"
+//   serde_derive-1.0.126 "default"
 //   serde_json-1.0.64 "default,std"
-//   syn-1.0.70 "clone-impls,default,derive,full,parsing,printing,proc-macro,quote"
+//   syn-1.0.72 "clone-impls,default,derive,full,parsing,printing,proc-macro,quote"
 //   termcolor-1.1.2
 //   thiserror-1.0.24
 //   thiserror-impl-1.0.24
 //   toml-0.5.8 "default"
 //   trybuild-1.0.42 "diff,dissimilar"
-//   unicode-xid-0.2.1 "default"
+//   unicode-xid-0.2.2 "default"
