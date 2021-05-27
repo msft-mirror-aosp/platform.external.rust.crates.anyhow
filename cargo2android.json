@@ -7,8 +7,12 @@
   ],
   "min_sdk_version": "29",
   "dependencies": true,
+  "dependency-blocklist": [
+    "rustversion",
+    "syn",
+    "trybuild"
+  ],
   "device": true,
-  "patch": "patches/Android.bp.diff",
   "run": true,
   "tests": true
 }
