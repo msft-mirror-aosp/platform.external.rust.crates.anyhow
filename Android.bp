@@ -286,17 +286,17 @@ rust_library {
 //   lazy_static-1.4.0
 //   pin-project-lite-0.2.6
 //   pin-utils-0.1.0
-//   proc-macro2-1.0.26 "default,proc-macro"
+//   proc-macro2-1.0.27 "default,proc-macro"
 //   quote-1.0.9 "default,proc-macro"
-//   rustversion-1.0.4
+//   rustversion-1.0.5
 //   ryu-1.0.5
 //   serde-1.0.126 "default,derive,serde_derive,std"
 //   serde_derive-1.0.126 "default"
 //   serde_json-1.0.64 "default,std"
 //   syn-1.0.72 "clone-impls,default,derive,full,parsing,printing,proc-macro,quote"
 //   termcolor-1.1.2
-//   thiserror-1.0.24
-//   thiserror-impl-1.0.24
+//   thiserror-1.0.25
+//   thiserror-impl-1.0.25
 //   toml-0.5.8 "default"
 //   trybuild-1.0.42 "diff,dissimilar"
 //   unicode-xid-0.2.2 "default"
