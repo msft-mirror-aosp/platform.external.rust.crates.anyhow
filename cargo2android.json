@@ -14,5 +14,9 @@
   ],
   "device": true,
   "run": true,
+  "test-blocklist": [
+    "tests/compiletest.rs",
+    "tests/test_backtrace.rs"
+  ],
   "tests": true
 }
