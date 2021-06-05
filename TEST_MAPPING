@@ -47,10 +47,16 @@
       "name": "doh_unit_test"
     },
     {
+      "name": "keystore2_selinux_concurrency_test"
+    },
+    {
       "name": "keystore2_selinux_test"
     },
     {
       "name": "keystore2_test"
+    },
+    {
+      "name": "microdroid_manager_test"
     },
     {
       "name": "vpnprofilestore_test"
