@@ -293,7 +293,7 @@ rust_library {
 //   serde-1.0.126 "default,derive,serde_derive,std"
 //   serde_derive-1.0.126 "default"
 //   serde_json-1.0.64 "default,std"
-//   syn-1.0.72 "clone-impls,default,derive,full,parsing,printing,proc-macro,quote"
+//   syn-1.0.73 "clone-impls,default,derive,full,parsing,printing,proc-macro,quote"
 //   termcolor-1.1.2
 //   thiserror-1.0.25
 //   thiserror-impl-1.0.25
