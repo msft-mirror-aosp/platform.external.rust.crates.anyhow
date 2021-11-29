@@ -6,8 +6,6 @@
     "com.android.uwb",
     "com.android.virt"
   ],
-  "min_sdk_version": "29",
-  "vendor_available": true,
   "dependencies": true,
   "dependency-blocklist": [
     "rustversion",
@@ -15,10 +13,12 @@
     "trybuild"
   ],
   "device": true,
+  "min-sdk-version": "29",
   "run": true,
   "test-blocklist": [
     "tests/compiletest.rs",
     "tests/test_backtrace.rs"
   ],
-  "tests": true
+  "tests": true,
+  "vendor-available": true
 }
