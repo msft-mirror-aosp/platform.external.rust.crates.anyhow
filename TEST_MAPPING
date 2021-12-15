@@ -5,40 +5,37 @@
       "name": "ZipFuseTest"
     },
     {
-      "name": "anyhow_device_test_src_lib"
+      "name": "anyhow_test_src_lib"
     },
     {
-      "name": "anyhow_device_test_tests_test_autotrait"
+      "name": "anyhow_test_tests_test_autotrait"
     },
     {
-      "name": "anyhow_device_test_tests_test_boxed"
+      "name": "anyhow_test_tests_test_boxed"
     },
     {
-      "name": "anyhow_device_test_tests_test_chain"
+      "name": "anyhow_test_tests_test_chain"
     },
     {
-      "name": "anyhow_device_test_tests_test_context"
+      "name": "anyhow_test_tests_test_context"
     },
     {
-      "name": "anyhow_device_test_tests_test_convert"
+      "name": "anyhow_test_tests_test_convert"
     },
     {
-      "name": "anyhow_device_test_tests_test_downcast"
+      "name": "anyhow_test_tests_test_downcast"
     },
     {
-      "name": "anyhow_device_test_tests_test_ffi"
+      "name": "anyhow_test_tests_test_fmt"
     },
     {
-      "name": "anyhow_device_test_tests_test_fmt"
+      "name": "anyhow_test_tests_test_macros"
     },
     {
-      "name": "anyhow_device_test_tests_test_macros"
+      "name": "anyhow_test_tests_test_repr"
     },
     {
-      "name": "anyhow_device_test_tests_test_repr"
-    },
-    {
-      "name": "anyhow_device_test_tests_test_source"
+      "name": "anyhow_test_tests_test_source"
     },
     {
       "name": "apkdmverity.test"
@@ -59,6 +56,12 @@
       "name": "keystore2_test"
     },
     {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "keystore2_vintf_test"
+    },
+    {
       "name": "legacykeystore_test"
     },
     {
@@ -72,6 +75,92 @@
     },
     {
       "name": "microdroid_manager_test"
+    },
+    {
+      "name": "open_then_run_module"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
+  "presubmit-rust": [
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "anyhow_test_src_lib"
+    },
+    {
+      "name": "anyhow_test_tests_test_autotrait"
+    },
+    {
+      "name": "anyhow_test_tests_test_boxed"
+    },
+    {
+      "name": "anyhow_test_tests_test_chain"
+    },
+    {
+      "name": "anyhow_test_tests_test_context"
+    },
+    {
+      "name": "anyhow_test_tests_test_convert"
+    },
+    {
+      "name": "anyhow_test_tests_test_downcast"
+    },
+    {
+      "name": "anyhow_test_tests_test_fmt"
+    },
+    {
+      "name": "anyhow_test_tests_test_macros"
+    },
+    {
+      "name": "anyhow_test_tests_test_repr"
+    },
+    {
+      "name": "anyhow_test_tests_test_source"
+    },
+    {
+      "name": "apkdmverity.test"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
+      "name": "doh_unit_test"
+    },
+    {
+      "name": "keystore2_selinux_concurrency_test"
+    },
+    {
+      "name": "keystore2_selinux_test"
+    },
+    {
+      "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "keystore2_vintf_test"
+    },
+    {
+      "name": "legacykeystore_test"
+    },
+    {
+      "name": "libapkverify.integration_test"
+    },
+    {
+      "name": "libapkverify.test"
+    },
+    {
+      "name": "libidsig.test"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "open_then_run_module"
     },
     {
       "name": "virtualizationservice_device_test"
