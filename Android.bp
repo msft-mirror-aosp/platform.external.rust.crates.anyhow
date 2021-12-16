@@ -37,41 +37,31 @@ license {
     ],
 }
 
-rust_defaults {
-    name: "anyhow_test_defaults",
+rust_test {
+    name: "anyhow_test_src_lib",
+    host_supported: true,
     crate_name: "anyhow",
-    srcs: ["src/lib.rs"],
     cargo_env_compat: true,
     cargo_pkg_version: "1.0.44",
+    srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
+    test_options: {
+        unit_test: true,
+    },
     edition: "2018",
     features: [
         "default",
         "std",
     ],
-    cfgs: ["backtrace"],
     rustlibs: [
         "libfutures",
         "libthiserror",
     ],
 }
 
-rust_test_host {
-    name: "anyhow_host_test_src_lib",
-    defaults: ["anyhow_test_defaults"],
-    test_options: {
-        unit_test: true,
-    },
-}
-
-rust_test {
-    name: "anyhow_device_test_src_lib",
-    defaults: ["anyhow_test_defaults"],
-}
-
 rust_defaults {
-    name: "anyhow_test_defaults_anyhow",
+    name: "anyhow_test_defaults",
     crate_name: "anyhow",
     cargo_env_compat: true,
     cargo_pkg_version: "1.0.44",
@@ -82,7 +72,6 @@ rust_defaults {
         "default",
         "std",
     ],
-    cfgs: ["backtrace"],
     rustlibs: [
         "libanyhow",
         "libfutures",
@@ -90,9 +79,10 @@ rust_defaults {
     ],
 }
 
-rust_test_host {
-    name: "anyhow_host_test_tests_test_autotrait",
-    defaults: ["anyhow_test_defaults_anyhow"],
+rust_test {
+    name: "anyhow_test_tests_test_autotrait",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_autotrait.rs"],
     test_options: {
         unit_test: true,
@@ -100,14 +90,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_autotrait",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_autotrait.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_boxed",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_boxed",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_boxed.rs"],
     test_options: {
         unit_test: true,
@@ -115,14 +100,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_boxed",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_boxed.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_chain",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_chain",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_chain.rs"],
     test_options: {
         unit_test: true,
@@ -130,14 +110,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_chain",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_chain.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_context",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_context",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_context.rs"],
     test_options: {
         unit_test: true,
@@ -145,14 +120,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_context",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_context.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_convert",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_convert",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_convert.rs"],
     test_options: {
         unit_test: true,
@@ -160,14 +130,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_convert",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_convert.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_downcast",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_downcast",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_downcast.rs"],
     test_options: {
         unit_test: true,
@@ -175,29 +140,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_downcast",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_downcast.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_ffi",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_ffi.rs"],
-    test_options: {
-        unit_test: true,
-    },
-}
-
-rust_test {
-    name: "anyhow_device_test_tests_test_ffi",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_ffi.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_fmt",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_fmt",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_fmt.rs"],
     test_options: {
         unit_test: true,
@@ -205,14 +150,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_fmt",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_fmt.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_macros",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_macros",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_macros.rs"],
     test_options: {
         unit_test: true,
@@ -220,14 +160,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_macros",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_macros.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_repr",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_repr",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_repr.rs"],
     test_options: {
         unit_test: true,
@@ -235,24 +170,13 @@ rust_test_host {
 }
 
 rust_test {
-    name: "anyhow_device_test_tests_test_repr",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_repr.rs"],
-}
-
-rust_test_host {
-    name: "anyhow_host_test_tests_test_source",
-    defaults: ["anyhow_test_defaults_anyhow"],
+    name: "anyhow_test_tests_test_source",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
     srcs: ["tests/test_source.rs"],
     test_options: {
         unit_test: true,
     },
-}
-
-rust_test {
-    name: "anyhow_device_test_tests_test_source",
-    defaults: ["anyhow_test_defaults_anyhow"],
-    srcs: ["tests/test_source.rs"],
 }
 
 rust_library {
@@ -267,7 +191,6 @@ rust_library {
         "default",
         "std",
     ],
-    cfgs: ["backtrace"],
     apex_available: [
         "//apex_available:platform",
         "com.android.compos",
