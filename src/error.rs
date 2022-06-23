@@ -1,10 +1,10 @@
-use crate::alloc::Box;
 use crate::backtrace::Backtrace;
 use crate::chain::Chain;
 #[cfg(any(feature = "std", anyhow_no_ptr_addr_of))]
 use crate::ptr::Mut;
 use crate::ptr::{Own, Ref};
 use crate::{Error, StdError};
+use alloc::boxed::Box;
 use core::any::TypeId;
 use core::fmt::{self, Debug, Display};
 use core::mem::ManuallyDrop;
@@ -26,6 +26,7 @@ impl Error {
     #[cfg(feature = "std")]
     #[cfg_attr(doc_cfg, doc(cfg(feature = "std")))]
     #[cold]
+    #[must_use]
     pub fn new<E>(error: E) -> Self
     where
         E: StdError + Send + Sync + 'static,
@@ -72,6 +73,7 @@ impl Error {
     /// }
     /// ```
     #[cold]
+    #[must_use]
     pub fn msg<M>(message: M) -> Self
     where
         M: Display + Debug + Send + Sync + 'static,
@@ -293,6 +295,7 @@ impl Error {
     /// }
     /// ```
     #[cold]
+    #[must_use]
     pub fn context<C>(self, context: C) -> Self
     where
         C: Display + Send + Sync + 'static,
