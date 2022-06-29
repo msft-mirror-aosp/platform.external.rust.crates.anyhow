@@ -18,7 +18,8 @@
   "run": true,
   "test-blocklist": [
     "tests/compiletest.rs",
-    "tests/test_backtrace.rs"
+    "tests/test_backtrace.rs",
+    "tests/test_ensure.rs"
   ],
   "tests": true,
   "vendor-available": true
