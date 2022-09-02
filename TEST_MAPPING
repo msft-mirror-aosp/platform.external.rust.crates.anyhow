@@ -2,6 +2,12 @@
 {
   "presubmit": [
     {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
       "name": "ZipFuseTest"
     },
     {
@@ -62,6 +68,12 @@
       "name": "doh_unit_test"
     },
     {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
       "name": "keystore2_selinux_concurrency_test"
     },
     {
@@ -93,6 +105,9 @@
     },
     {
       "name": "librustutils_test"
+    },
+    {
+      "name": "libtombstoned_client_rust_test"
     },
     {
       "name": "microdroid_manager_test"
@@ -103,6 +118,12 @@
   ],
   "presubmit-rust": [
     {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
       "name": "ZipFuseTest"
     },
     {
@@ -163,6 +184,12 @@
       "name": "doh_unit_test"
     },
     {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
       "name": "keystore2_selinux_concurrency_test"
     },
     {
@@ -194,6 +221,9 @@
     },
     {
       "name": "librustutils_test"
+    },
+    {
+      "name": "libtombstoned_client_rust_test"
     },
     {
       "name": "microdroid_manager_test"
