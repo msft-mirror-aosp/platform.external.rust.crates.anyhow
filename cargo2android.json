@@ -1,6 +1,7 @@
 {
   "dependencies": true,
   "dependency-blocklist": [
+    "backtrace",
     "rustversion",
     "syn",
     "trybuild"
@@ -14,5 +15,8 @@
     "tests/test_ensure.rs"
   ],
   "tests": true,
-  "vendor-available": true
+  "vendor-available": true,
+  "cfg-blocklist": [
+    "backtrace"
+  ]
 }
