@@ -5,6 +5,9 @@ on:
   pull_request:
   schedule: [cron: "40 1 * * *"]
 
+permissions:
+  contents: read
+
 env:
   RUSTFLAGS: -Dwarnings
 
@@ -15,7 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        rust: [nightly, beta, stable, 1.53.0]
+        rust: [nightly, beta, stable, 1.56.0]
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@master
@@ -32,7 +36,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        rust: [1.52.0, 1.51.0, 1.50.0, 1.42.0, 1.38.0]
+        rust: [1.52.0, 1.51.0, 1.50.0, 1.42.0, 1.39.0]
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@master
@@ -42,11 +47,12 @@ jobs:
       - run: cargo check
       - run: cargo check --no-default-features
       - run: cargo check --features backtrace
-        if: matrix.rust != '1.38.0'
+        if: matrix.rust != '1.39.0' && matrix.rust != '1.50.0'
 
   windows:
     name: Windows
     runs-on: windows-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
@@ -58,6 +64,7 @@ jobs:
     name: Clippy
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@nightly
@@ -68,11 +75,10 @@ jobs:
   miri:
     name: Miri
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@nightly
-        with:
-          components: miri, rust-src
+      - uses: dtolnay/rust-toolchain@miri
       - run: cargo miri test
         env:
           MIRIFLAGS: -Zmiri-strict-provenance
@@ -81,6 +87,7 @@ jobs:
     name: Outdated
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/install@cargo-outdated
