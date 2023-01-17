@@ -42,7 +42,7 @@ rust_test {
     host_supported: true,
     crate_name: "anyhow",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.0.58",
+    cargo_pkg_version: "1.0.68",
     srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
@@ -64,7 +64,7 @@ rust_defaults {
     name: "anyhow_test_defaults",
     crate_name: "anyhow",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.0.58",
+    cargo_pkg_version: "1.0.68",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
@@ -140,6 +140,16 @@ rust_test {
 }
 
 rust_test {
+    name: "anyhow_test_tests_test_ffi",
+    defaults: ["anyhow_test_defaults"],
+    host_supported: true,
+    srcs: ["tests/test_ffi.rs"],
+    test_options: {
+        unit_test: true,
+    },
+}
+
+rust_test {
     name: "anyhow_test_tests_test_fmt",
     defaults: ["anyhow_test_defaults"],
     host_supported: true,
@@ -184,7 +194,7 @@ rust_library {
     host_supported: true,
     crate_name: "anyhow",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.0.58",
+    cargo_pkg_version: "1.0.68",
     srcs: ["src/lib.rs"],
     edition: "2018",
     features: [
@@ -198,3 +208,4 @@ rust_library {
     vendor_available: true,
     min_sdk_version: "29",
 }
+
