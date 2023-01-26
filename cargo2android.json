@@ -16,6 +16,7 @@
   ],
   "tests": true,
   "vendor-available": true,
+  "product-available": true,
   "cfg-blocklist": [
     "backtrace"
   ]
