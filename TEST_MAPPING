@@ -76,9 +76,6 @@
       "name": "anyhow_test_tests_test_downcast"
     },
     {
-      "name": "anyhow_test_tests_test_ffi"
-    },
-    {
       "name": "anyhow_test_tests_test_fmt"
     },
     {
@@ -112,9 +109,6 @@
     },
     {
       "name": "anyhow_test_tests_test_downcast"
-    },
-    {
-      "name": "anyhow_test_tests_test_ffi"
     },
     {
       "name": "anyhow_test_tests_test_fmt"
