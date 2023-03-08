@@ -12,13 +12,18 @@ env:
   RUSTFLAGS: -Dwarnings
 
 jobs:
+  pre_ci:
+    uses: dtolnay/.github/.github/workflows/pre_ci.yml@master
+
   test:
     name: Rust ${{matrix.rust}}
+    needs: pre_ci
+    if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        rust: [nightly, beta, stable, 1.56.0]
+        rust: [nightly, beta, stable, 1.60.0]
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v3
@@ -32,6 +37,8 @@ jobs:
 
   build:
     name: Rust ${{matrix.rust}}
+    needs: pre_ci
+    if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -46,11 +53,11 @@ jobs:
           components: rust-src
       - run: cargo check
       - run: cargo check --no-default-features
-      - run: cargo check --features backtrace
-        if: matrix.rust != '1.39.0' && matrix.rust != '1.50.0'
 
   windows:
     name: Windows
+    needs: pre_ci
+    if: needs.pre_ci.outputs.continue
     runs-on: windows-latest
     timeout-minutes: 45
     steps:
@@ -74,6 +81,8 @@ jobs:
 
   miri:
     name: Miri
+    needs: pre_ci
+    if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
