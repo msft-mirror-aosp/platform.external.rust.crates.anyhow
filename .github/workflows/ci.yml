@@ -3,6 +3,7 @@ name: CI
 on:
   push:
   pull_request:
+  workflow_dispatch:
   schedule: [cron: "40 1 * * *"]
 
 permissions:
@@ -31,6 +32,9 @@ jobs:
         with:
           toolchain: ${{matrix.rust}}
           components: rust-src
+      - name: Enable type layout randomization
+        run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
+        if: matrix.rust == 'nightly'
       - run: cargo test
       - run: cargo check --no-default-features
       - run: cargo check --features backtrace
@@ -53,6 +57,18 @@ jobs:
           components: rust-src
       - run: cargo check
       - run: cargo check --no-default-features
+
+  minimal:
+    name: Minimal versions
+    needs: pre_ci
+    if: needs.pre_ci.outputs.continue
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@nightly
+      - run: cargo generate-lockfile -Z minimal-versions
+      - run: cargo check --locked --features backtrace
 
   windows:
     name: Windows
@@ -88,6 +104,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@miri
+      - run: cargo miri setup
       - run: cargo miri test
         env:
           MIRIFLAGS: -Zmiri-strict-provenance
